@@ -30,58 +30,21 @@ bellDropdown.addEventListener('mouseout', () => {
 })
 
 
+//TRAFFIC CHART
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Traffic Chart
-
-const trafficNav = document.querySelector('.traffic-nav')
-const trafficRange = document.getElementsByClassName('selectRange');
-
-var dataHourly = [350, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 1250, 1500, 2500];
-var dataDaily = [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500];
-var dataWeekly = [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500];
-var dataMonthly = [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500];
-
-trafficNav.addEventListener('click', (e) => {
-    if (event.target.tagName = 'LI' && event.target.value == 'Hourly') {
-        alert('test');
-    } else {
-        alert('möh')
-    }
-})
-
-
-
-
-
-
-
-
-
-
-
-var trafficChart = new Chart(trafficCanvas, {
+const currentData = [
+    [50, 80, 120, 100, 70, 90, 140, 100, 40, 60, 80],
+    [450, 300, 160, 200, 220, 260, 240, 200, 180, 400, 350],
+    [700, 950, 600, 750, 1000, 850, 1100, 1500, 1000, 1200, 1600],
+    [1600, 2200, 1300, 1700, 2400, 2900, 2400, 2800, 2500, 2600, 1400]
+  ];
+  
+  var trafficChart = new Chart(trafficCanvas, {
     type: 'line',
     data: {
         labels: ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10', '11-17', '18-24', '25-31'],
         datasets: [{
-            data:  [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],                
+            data: currentData[2],                
             lineTension: 0,
             borderColor: '#7477bf',
             borderWidth: 1,
@@ -95,7 +58,7 @@ var trafficChart = new Chart(trafficCanvas, {
     options: {
         
         animation: {
-            duration: 0
+            duration: 500
         },
         scales: {
             yAxes: [{
@@ -111,57 +74,103 @@ var trafficChart = new Chart(trafficCanvas, {
 
 })
 
+function addData(chart, data) {
+    chart.data.datasets.forEach(dataset => {
+      dataset.data = data;
+    });
+    chart.update();
+  }
+  
+  function removeData(chart) {
+    chart.data.datasets.forEach(dataset => {
+      dataset.data = [];
+    });
+    chart.render();
+  }
+
+  const listItems = document.querySelectorAll(".traffic-nav-li");
+  
+  for (let i = 0; i < listItems.length; i++) {
+    listItems[i].addEventListener("click", function(e) {
+      const current = document.querySelector(".active");
+      current.className = e.target.className.replace(" active", "");
+      this.className += " active";
+      removeData(trafficChart);
+      addData(trafficChart, currentData[i]);
+    });
+  }
+
 // Daily Traffic Chart
 
-var dailyChart = new Chart(dailyCanvas, {
-    type: 'bar',
-    data: {
-        labels: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
-        datasets: [{
-            data: [75, 115, 175, 125, 190, 200, 100],
-            backgroundColor: '#7477bf',
-            borderWidth: 1,
-            barPercentage: 0.7
-        }]
-    },
-    options: {
-        legend: {
+
+// data for daily traffic bar chart
+const dailyData = {
+    labels: ["S", "M", "T", "W", "T", "F", "S"],
+    datasets: [{
+        label: '# of Hits',
+        data: [75, 115, 175, 125, 225, 200, 100],
+        backgroundColor: '#7477BF',
+        borderWidth: 1
+    }]
+};
+    const dailyOptions = {
+        responsive: true,
+        maintainAspectRatio: true,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        },
+        legend : {
             display: false
         }
     }
-})
+
+let dailyChart = new Chart(dailyCanvas, {
+    type: 'bar',
+    data: dailyData,
+    options: dailyOptions
+});
 
 // Mobile Users Chart
 
-var mobileChart = new Chart(mobileCanvas, {
-    type: 'doughnut',
-    data: {
-        labels: ['Phones', 'Tablets', 'Desktop'],
-        datasets: [{
-            data: [2000, 450, 650],
-            backgroundColor: [
-                '#298A08',
-                '#088A85',
-                '#7477bf'
-            ]
-        }]
-    },
-    options: {
-        legend: {
-            position: 'right',
-            align: 'center',
-            labels: {
-                boxWidth: 13,
-                boxHeight: 18,
-                padding: 15
-            }
+const mobileData = {
+    labels: ["Desktop", "Tablet", "Phones"],
+    datasets: [{
+        label: '# of Users',
+        data: [2000, 550, 500],
+        borderWidth: 0,
+        backgroundColor: [
+            '#7477BF',
+            '#78CF82',
+            '#51B6C8'
+        ]
+    }]
+};
+
+const mobileOptions = {
+    responsive: true,
+    maintainAspectRatio: true,
+    legend: {
+        position: 'right',
+        labels: {
+            boxWidth: 13,
+            fontStyle: 'bold'
         }
     }
-})
+}
+
+let mobileChart = new Chart(mobileCanvas, {
+    type: 'doughnut',
+    data: mobileData,
+    options: mobileOptions
+});
 
 // User Warning
 
-const userSearch = document.getElementById('user-search');
+const userSearch = document.querySelector('.user-search');
 const userTextarea = document.getElementById('user-textarea');
 const sendButton = document.getElementById('send-button');
 

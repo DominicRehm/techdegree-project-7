@@ -1,0 +1,71 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas:
+            'header'
+            'nav'
+            'main';
+}
+
+.main-header {
+    grid-area: header;
+}
+
+.main-nav {
+    grid-area: nav;
+}
+
+.main-area {
+    grid-area: main;
+}
+
+.full-size-container,
+.half-size-container {
+    width: 95vw;
+}
+
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: 75px 1fr;
+        grid-template-areas: 
+                'header header'
+                'nav main'
+    }
+
+    .main-area {
+        display: grid;
+        grid-template-columns: 50%;
+        grid-template-rows: auto auto 1fr;
+    }
+
+    .dashboard-search,
+    .alert-banner,
+    .traffic-chart,
+    .social-stats,
+    .search-container {
+        grid-column: 1 / span 2;
+    }
+
+    .daily-chart,
+    .members,
+    .message-user {
+        grid-column: 1 / span 1;
+    }
+
+    .mobile-chart,
+    .activity,
+    .settings {
+        grid-column: 2 / span 1;
+    }
+
+
+    .full-size-container {
+        width: 90vw;
+    }
+
+    .half-size-container {
+        width: 45vw;
+    }
+}
+

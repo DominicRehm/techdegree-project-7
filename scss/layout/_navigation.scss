@@ -1,43 +1,40 @@
 .main-nav {
     background-color: $secondary-color;
-    height: auto;
+    height: 50px;
+
 }
 
 .navigation-list {
     display: flex;
     justify-content: center;
-    align-items: center;
-
+    margin-top: 5px;
 
     & li {
-        list-style: none;
-        margin: 10px;
-
-        & a img {
-            height: 30px;
-            width: 30px;
-        }
+        margin: 0 10px;
     }
 }
 
-.active-nav-list {
-    border: 1px solid
+.navigation-list li a img {
+    height: $img-height;
+    width: $img-width;
 }
 
+
+
 @media (min-width: 768px) {
+    .main-nav {
+        height: 100%;
+        width: 60px;
+    }
 
     .navigation-list {
         flex-direction: column;
-        justify-content: flex-start;
-        height: 100vh;
-        padding: 0;
-        
-        & li {
-            margin-bottom: 15px;
+        align-items: center;
+        margin-top: 10px;
 
-            & a img:first-child {
-                margin-top: 15px;
-            }
+        & li {
+            margin-bottom: 20px;
+            width: 100%;
         }
     }
 }

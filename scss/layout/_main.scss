@@ -48,6 +48,7 @@
 @media (min-width: 768px) {
     .main-area {
         margin: 0;
+        width: 90vw;
 
         & h3 {
             font-size: .9em;
@@ -88,6 +89,8 @@
     }
 }
 
+
+
 // ========== Alert Banner ========== \\
 
 .alert {
@@ -110,22 +113,10 @@
 
 @media (min-width: 768px) {
     .alert {
-        width: 87vw;
+        width: 91vw;
     }
 
     .alert-banner {
         padding: 10px;
     }
 }
-
-@media (min-width: 1024px) {
-    .alert {
-        width: 90vw;
-    }
-}
-
-
-
-
-
-
