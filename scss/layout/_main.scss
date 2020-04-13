@@ -1,0 +1,131 @@
+// ========== Dashboard Search ========== \\
+
+.main-area {
+    margin: 0 10px;
+
+    & h3 {
+        color: $dark-font-color;
+        text-align: center;
+        margin: 50px 0 40px 0;
+        font-size: 1em;
+        text-transform: uppercase;
+    }
+}
+
+@media (min-width: 768px) {
+    .main-area h3 {
+        margin: 20px 0 25px 0;
+        
+    }
+}
+
+@media (min-width: 1024px) {
+    h3 {
+        padding-left: 20px;
+    }
+}
+
+.dashboard-search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+
+    & h2 {
+        font-size: 1.2em;
+    }
+
+}
+
+.search-container input {
+    height: 35px;
+    width: 170px;
+    padding-left: 15px;
+    border: 1px solid $border-color;
+    border-radius: $basic-radius;
+}
+
+@media (min-width: 768px) {
+    .main-area {
+        margin: 0;
+
+        & h3 {
+            font-size: .9em;
+            text-align: left;
+        }
+    }
+
+    .dashboard-search {
+        height: 55px;
+        padding: 0 10px;
+
+        & .dashboard-heading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 15%;
+            height: 100%;
+            padding-right: 10px;
+            font-size: .8em;
+        }
+    
+        & .search-container {
+            background-color: $background-color;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 85%;
+            height: 100%;
+            padding-right: 10px;
+            border-bottom: 1px solid $border-color;
+            border-left: 1px solid $border-color;
+        
+            & input {
+                width: 270px;
+                height: 35px;
+            }
+        }
+    }
+}
+
+// ========== Alert Banner ========== \\
+
+.alert {
+    background-color: $primary-color;
+    color: $light-font-color;
+    display: flex;
+    justify-content: space-between;
+    border-radius: $basic-radius;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: .8em;
+    width: 94vw;
+
+    & .alert-banner-close {
+        font-weight: bold;
+        font-size: 1.2em;
+        cursor: pointer;
+    }
+}
+
+@media (min-width: 768px) {
+    .alert {
+        width: 87vw;
+    }
+
+    .alert-banner {
+        padding: 10px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .alert {
+        width: 90vw;
+    }
+}
+
+
+
+
+
+

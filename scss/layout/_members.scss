@@ -1,0 +1,90 @@
+// NEW-MEMBERS
+
+.member-card {
+    border-bottom: 1px solid $border-color;
+}
+
+.member-card:last-child {
+    border: none;
+}
+
+.member-info {
+    display: flex;   
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    padding-left: 15px;
+
+    & img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+    }
+
+    & div {
+        font-size: .8em;
+        text-align: center;
+
+        & .member-name   {
+            font-size: 1.2em;
+        }
+
+        & a {
+            text-decoration: none;
+            color: $primary-color;
+        }
+    }
+}
+
+.date {
+    text-align: right;
+    font-size: .8em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: $dark-font-color;
+}
+
+@media (min-width: 768px) {
+    .members {
+        padding: 0 10px;
+        width: auto;
+        border-right: 1px solid $border-color;
+        border-bottom: 1px solid $border-color;
+        border-top: 1px solid $border-color;
+        
+       & .member-card {
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            & .arrow {
+                font-size: 3em;
+                margin-right: 10px;
+            }
+
+            .member-info {
+                flex-direction: row;
+                text-align: center;
+        
+                & img {
+                    height: $img-height;
+                    width: $img-width;
+                    margin-right: 8px;
+                }
+        
+                & .date {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+
+    .member-name {
+        text-align: left;
+    }
+}
+
+
+

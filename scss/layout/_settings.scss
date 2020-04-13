@@ -1,0 +1,71 @@
+// SETTINGS
+
+.settings-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.checkbox {
+    width: 80px;
+}
+
+.form-field {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.setting-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+#save-button,
+#cancel-button {
+    width: 40%;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 5px;
+    background-color: #7477bf;
+    color: #fff;
+    font-size: .9em;
+    font-weight: bold; 
+}
+
+#cancel-button {
+    margin-left: 20px;
+    background-color: #BDBDBD;
+}
+
+@media (min-width: 768px) {
+    .settings {
+        padding: 0 10px;
+        height: 320px;
+
+        #save-button,
+        #cancel-button {
+            width: 50%;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .settings {
+        border-top: 1px solid $border-color;
+        padding: 0 30px;
+    }
+
+    .switch-ios {
+        right: 120px;
+    }
+
+    #save-button,
+    #cancel-button {
+        width: 210px;
+
+    }
+}

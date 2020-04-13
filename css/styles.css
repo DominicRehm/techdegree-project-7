@@ -1,0 +1,861 @@
+/* line 1, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_basics.scss */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arimo', sans-serif;
+}
+
+/* line 8, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_basics.scss */
+.container {
+  padding: 0 10px;
+}
+
+/* line 12, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_basics.scss */
+li {
+  list-style: none;
+}
+
+/* line 16, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_basics.scss */
+li a {
+  color: #666666;
+  text-decoration: none;
+}
+
+/* line 1, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_grid.scss */
+.grid-container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  grid-template-areas: 'header' 'nav' 'main';
+}
+
+/* line 11, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_grid.scss */
+.main-header {
+  grid-area: header;
+}
+
+/* line 15, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_grid.scss */
+.main-nav {
+  grid-area: nav;
+}
+
+/* line 19, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_grid.scss */
+.main-area {
+  grid-area: main;
+}
+
+/* line 23, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_grid.scss */
+.full-size-container,
+.half-size-container {
+  width: 95vw;
+}
+
+@media (min-width: 768px) {
+  /* line 29, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_grid.scss */
+  .grid-container {
+    grid-template-columns: 75px 1fr;
+    grid-template-areas: 'header header' 'nav main';
+  }
+  /* line 36, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_grid.scss */
+  .main-area {
+    display: grid;
+    grid-template-columns: 50%;
+    grid-template-rows: auto auto 1fr;
+  }
+  /* line 42, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_grid.scss */
+  .dashboard-search,
+  .alert-banner,
+  .traffic-chart,
+  .social-stats,
+  .search-container {
+    grid-column: 1 / span 2;
+  }
+  /* line 50, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_grid.scss */
+  .daily-chart,
+  .members,
+  .message-user {
+    grid-column: 1 / span 1;
+  }
+  /* line 56, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_grid.scss */
+  .mobile-chart,
+  .activity,
+  .settings {
+    grid-column: 2 / span 1;
+  }
+  /* line 63, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_grid.scss */
+  .full-size-container {
+    width: 90vw;
+  }
+  /* line 67, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_grid.scss */
+  .half-size-container {
+    width: 45vw;
+  }
+}
+
+/* line 1, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_header.scss */
+.main-header {
+  background-color: #7477bf;
+  color: #fff;
+  height: 55px;
+}
+
+/* line 6, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_header.scss */
+.main-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 55px;
+}
+
+/* line 13, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_header.scss */
+.main-header .header-right {
+  display: flex;
+  align-items: center;
+}
+
+/* line 17, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_header.scss */
+.main-header .header-right img {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  margin-left: 15px;
+  margin-right: 5px;
+}
+
+/* line 28, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_header.scss */
+.bell-dropdown {
+  position: relative;
+  display: inline-block;
+  top: 4px;
+}
+
+/* line 34, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_header.scss */
+#notification {
+  position: absolute;
+  color: #81c98f;
+  font-size: 2em;
+  border-radius: 50%;
+  top: -20px;
+  left: 20px;
+}
+
+/* line 43, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_header.scss */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fbfbfb;
+  color: #666666;
+  font-size: .9em;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+  left: -5px;
+  border-radius: 5px;
+}
+
+/* line 56, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_header.scss */
+.dropdown-content p:first-child {
+  border-bottom: 1px solid #dfdfdf;
+  padding-bottom: 10px;
+}
+
+/* line 61, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_header.scss */
+.dropdown-content p:last-child {
+  padding-top: 10px;
+}
+
+@media (min-width: 768px) {
+  /* line 68, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_header.scss */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fbfbfb;
+    color: #666666;
+    font-size: .9em;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    right: -4px;
+    border-radius: 5px;
+  }
+}
+
+/* line 85, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_header.scss */
+.icn-bell {
+  fill: #fff;
+  height: 28px;
+  width: 28px;
+  margin-right: 6px;
+}
+
+/* line 92, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_header.scss */
+.icn-bell:hover {
+  transform: rotate(15deg);
+}
+
+/* line 1, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_navigation.scss */
+.main-nav {
+  background-color: #4d4c72;
+  height: auto;
+}
+
+/* line 6, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_navigation.scss */
+.navigation-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 12, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_navigation.scss */
+.navigation-list li {
+  list-style: none;
+  margin: 10px;
+}
+
+/* line 16, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_navigation.scss */
+.navigation-list li a img {
+  height: 30px;
+  width: 30px;
+}
+
+/* line 23, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_navigation.scss */
+.active-nav-list {
+  border: 1px solid;
+}
+
+@media (min-width: 768px) {
+  /* line 29, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_navigation.scss */
+  .navigation-list {
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100vh;
+    padding: 0;
+  }
+  /* line 35, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_navigation.scss */
+  .navigation-list li {
+    margin-bottom: 15px;
+  }
+  /* line 38, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_navigation.scss */
+  .navigation-list li a img:first-child {
+    margin-top: 15px;
+  }
+}
+
+/* line 3, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_main.scss */
+.main-area {
+  margin: 0 10px;
+}
+
+/* line 6, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_main.scss */
+.main-area h3 {
+  color: #666666;
+  text-align: center;
+  margin: 50px 0 40px 0;
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  /* line 16, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_main.scss */
+  .main-area h3 {
+    margin: 20px 0 25px 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* line 23, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_main.scss */
+  h3 {
+    padding-left: 20px;
+  }
+}
+
+/* line 28, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_main.scss */
+.dashboard-search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+}
+
+/* line 34, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_main.scss */
+.dashboard-search h2 {
+  font-size: 1.2em;
+}
+
+/* line 40, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_main.scss */
+.search-container input {
+  height: 35px;
+  width: 170px;
+  padding-left: 15px;
+  border: 1px solid #dfdfdf;
+  border-radius: 5px;
+}
+
+@media (min-width: 768px) {
+  /* line 49, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_main.scss */
+  .main-area {
+    margin: 0;
+  }
+  /* line 52, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_main.scss */
+  .main-area h3 {
+    font-size: .9em;
+    text-align: left;
+  }
+  /* line 58, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_main.scss */
+  .dashboard-search {
+    height: 55px;
+    padding: 0 10px;
+  }
+  /* line 62, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_main.scss */
+  .dashboard-search .dashboard-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    height: 100%;
+    padding-right: 10px;
+    font-size: .8em;
+  }
+  /* line 72, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_main.scss */
+  .dashboard-search .search-container {
+    background-color: #fbfbfb;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 85%;
+    height: 100%;
+    padding-right: 10px;
+    border-bottom: 1px solid #dfdfdf;
+    border-left: 1px solid #dfdfdf;
+  }
+  /* line 83, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_main.scss */
+  .dashboard-search .search-container input {
+    width: 270px;
+    height: 35px;
+  }
+}
+
+/* line 93, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_main.scss */
+.alert {
+  background-color: #7477bf;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: .8em;
+  width: 94vw;
+}
+
+/* line 104, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_main.scss */
+.alert .alert-banner-close {
+  font-weight: bold;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  /* line 112, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_main.scss */
+  .alert {
+    width: 87vw;
+  }
+  /* line 116, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_main.scss */
+  .alert-banner {
+    padding: 10px;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* line 122, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_main.scss */
+  .alert {
+    width: 90vw;
+  }
+}
+
+/* line 3, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_charts.scss */
+.traffic-chart {
+  margin-top: 20px;
+  width: auto;
+}
+
+/* line 8, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_charts.scss */
+.traffic-nav ul {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+/* line 13, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_charts.scss */
+.traffic-nav ul .traffic-nav-li {
+  padding: 5px 10px;
+}
+
+@media (min-width: 768px) {
+  /* line 19, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_charts.scss */
+  .traffic-chart {
+    margin-top: 10px;
+    padding: 20px 10px;
+    border-bottom: 1px solid #dfdfdf;
+  }
+  /* line 24, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_charts.scss */
+  .traffic-chart .traffic-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .95em;
+  }
+  /* line 30, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_charts.scss */
+  .traffic-chart .traffic-info h3 {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  /* line 40, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_charts.scss */
+  .daily-chart {
+    padding: 0px 10px 20px 10px;
+    width: auto;
+    border-right: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
+  }
+}
+
+@media (min-width: 768px) {
+  /* line 51, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_charts.scss */
+  .mobile-chart {
+    padding: 0px 10px 20px 10px;
+    width: auto;
+    border-bottom: 1px solid #dfdfdf;
+  }
+}
+
+/* line 3, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_social.scss */
+.social-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* line 9, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_social.scss */
+.social-card {
+  background-color: #fbfbfb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  margin-bottom: 20px;
+  border: 1px solid #BDBDBD;
+  border-radius: 5px;
+  padding: 15px 15px;
+}
+
+/* line 21, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_social.scss */
+.social-icn {
+  background-color: #7477bf;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+}
+
+/* line 27, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_social.scss */
+.social-icn path {
+  height: 40px;
+  width: 40px;
+}
+
+/* line 33, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_social.scss */
+.social-text {
+  margin-left: 10px;
+}
+
+/* line 36, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_social.scss */
+.social-text h4 {
+  font-size: .9em;
+  color: #7477bf;
+}
+
+/* line 41, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_social.scss */
+.social-text p {
+  font-size: 1.6em;
+}
+
+@media (min-width: 768px) {
+  /* line 48, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_social.scss */
+  .social-stats {
+    padding: 0 10px;
+  }
+  /* line 52, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_social.scss */
+  .social-area {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* line 59, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_social.scss */
+  .social-stats {
+    width: 100%;
+  }
+  /* line 63, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_social.scss */
+  .social-card {
+    width: 30%;
+  }
+  /* line 67, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_social.scss */
+  .social-text p {
+    font-size: 2.5em;
+  }
+}
+
+/* line 3, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_members.scss */
+.member-card {
+  border-bottom: 1px solid #dfdfdf;
+}
+
+/* line 7, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_members.scss */
+.member-card:last-child {
+  border: none;
+}
+
+/* line 11, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_members.scss */
+.member-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  padding-left: 15px;
+}
+
+/* line 18, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_members.scss */
+.member-info img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* line 25, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_members.scss */
+.member-info div {
+  font-size: .8em;
+  text-align: center;
+}
+
+/* line 29, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_members.scss */
+.member-info div .member-name {
+  font-size: 1.2em;
+}
+
+/* line 33, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_members.scss */
+.member-info div a {
+  text-decoration: none;
+  color: #7477bf;
+}
+
+/* line 40, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_members.scss */
+.date {
+  text-align: right;
+  font-size: .8em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #666666;
+}
+
+@media (min-width: 768px) {
+  /* line 49, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_members.scss */
+  .members {
+    padding: 0 10px;
+    width: auto;
+    border-right: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
+    border-top: 1px solid #dfdfdf;
+  }
+  /* line 56, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_members.scss */
+  .members .member-card {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  /* line 62, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_members.scss */
+  .members .member-card .arrow {
+    font-size: 3em;
+    margin-right: 10px;
+  }
+  /* line 67, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_members.scss */
+  .members .member-card .member-info {
+    flex-direction: row;
+    text-align: center;
+  }
+  /* line 71, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_members.scss */
+  .members .member-card .member-info img {
+    height: 40px;
+    width: 40px;
+    margin-right: 8px;
+  }
+  /* line 77, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_members.scss */
+  .members .member-card .member-info .date {
+    margin-top: 0;
+  }
+  /* line 84, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_members.scss */
+  .member-name {
+    text-align: left;
+  }
+}
+
+/* line 3, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_activity.scss */
+.activity-card {
+  border-bottom: 1px solid #dfdfdf;
+}
+
+/* line 7, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_activity.scss */
+.activity-card:last-child {
+  border: none;
+}
+
+/* line 11, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_activity.scss */
+.activity-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* line 17, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_activity.scss */
+.activity-info img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* line 24, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_activity.scss */
+.activity-info div {
+  font-size: .9em;
+  text-align: center;
+}
+
+/* line 29, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_activity.scss */
+.activity-info .date {
+  text-align: center;
+  font-size: .8em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #666666;
+}
+
+/* line 38, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_activity.scss */
+.arrow {
+  text-align: center;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  /* line 46, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_activity.scss */
+  .activity {
+    padding: 0 10px;
+    width: auto;
+    border-bottom: 1px solid #dfdfdf;
+    border-top: 1px solid #dfdfdf;
+  }
+  /* line 53, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_activity.scss */
+  .activity-card {
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  /* line 60, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_activity.scss */
+  .activity-card .arrow {
+    font-size: 2em;
+    margin-right: 10px;
+  }
+  /* line 65, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_activity.scss */
+  .activity-card .activity-info {
+    flex-direction: row;
+    text-align: center;
+  }
+  /* line 69, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_activity.scss */
+  .activity-card .activity-info img {
+    height: 40px;
+    width: 40px;
+    margin-right: 8px;
+  }
+  /* line 75, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_activity.scss */
+  .activity-card .activity-info .date {
+    margin-top: 5px;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* line 85, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_activity.scss */
+  .activity-info {
+    padding-left: 15px;
+  }
+  /* line 88, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_activity.scss */
+  .activity-info div p {
+    text-align: left;
+    font-size: .9em;
+  }
+  /* line 93, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_activity.scss */
+  .activity-info .date {
+    text-align: left;
+  }
+  /* line 100, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_activity.scss */
+  .arrow {
+    margin-left: 5px;
+  }
+}
+
+/* line 3, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_messageUser.scss */
+.input-box {
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 7, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_messageUser.scss */
+.input-box input, .input-box textarea {
+  margin-bottom: 15px;
+  border-radius: 5px;
+  padding-left: 10px;
+  font-size: .9em;
+  background-color: #FAFAFA;
+}
+
+/* line 15, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_messageUser.scss */
+.input-box input {
+  height: 50px;
+  width: 100%;
+}
+
+/* line 20, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_messageUser.scss */
+.input-box textarea {
+  height: 85px;
+  padding-top: 5px;
+  width: auto;
+}
+
+/* line 27, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_messageUser.scss */
+#send-button {
+  text-align: center;
+  width: auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 5px;
+  background-color: #7477bf;
+  color: #fff;
+  font-size: .9em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  /* line 41, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_messageUser.scss */
+  .message-user {
+    padding: 0 10px;
+    height: 320px;
+    border-right: 1px solid #dfdfdf;
+  }
+  /* line 47, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_messageUser.scss */
+  #user-textarea {
+    height: 89px;
+    max-width: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* line 55, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_messageUser.scss */
+  .message-user {
+    width: auto;
+    padding: 0 30px;
+  }
+  /* line 59, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_messageUser.scss */
+  .message-user #user-textarea {
+    height: 85px;
+    width: auto;
+    padding-top: 5px;
+  }
+}
+
+/* line 3, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_settings.scss */
+.settings-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+}
+
+/* line 10, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_settings.scss */
+.checkbox {
+  width: 80px;
+}
+
+/* line 14, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_settings.scss */
+.form-field {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+}
+
+/* line 20, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_settings.scss */
+.setting-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+/* line 26, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_settings.scss */
+#save-button,
+#cancel-button {
+  width: 40%;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 5px;
+  background-color: #7477bf;
+  color: #fff;
+  font-size: .9em;
+  font-weight: bold;
+}
+
+/* line 39, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_settings.scss */
+#cancel-button {
+  margin-left: 20px;
+  background-color: #BDBDBD;
+}
+
+@media (min-width: 768px) {
+  /* line 45, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_settings.scss */
+  .settings {
+    padding: 0 10px;
+    height: 320px;
+  }
+  /* line 49, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_settings.scss */
+  .settings #save-button,
+  .settings #cancel-button {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* line 57, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_settings.scss */
+  .settings {
+    border-top: 1px solid #dfdfdf;
+    padding: 0 30px;
+  }
+  /* line 62, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_settings.scss */
+  .switch-ios {
+    right: 120px;
+  }
+  /* line 66, ../../../iCloudDrive/Documents/Codes/Project #7/scss/layout/_settings.scss */
+  #save-button,
+  #cancel-button {
+    width: 210px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

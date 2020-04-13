@@ -1,0 +1,103 @@
+// RECENT ACTIVITY
+
+.activity-card {
+    border-bottom: 1px solid $border-color;
+}
+
+.activity-card:last-child {
+    border: none;
+}
+
+.activity-info {
+    display: flex;   
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+
+    & img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+    }
+
+    & div {
+        font-size: .9em;
+        text-align: center;
+    }
+
+    & .date {
+        text-align: center;
+        font-size: .8em;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color: $dark-font-color;
+    }
+}
+
+.arrow {
+    text-align: center;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+
+    .activity {
+        padding: 0 10px;
+        width: auto;
+        border-bottom: 1px solid $border-color;
+        border-top: 1px solid $border-color;
+    }
+
+    .activity-card {
+        height: 80px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        & .arrow {
+            font-size: 2em;
+            margin-right: 10px;
+        }
+
+        .activity-info {
+            flex-direction: row;
+            text-align: center;
+    
+            & img {
+                height: $img-height;
+                width: $img-width;
+                margin-right: 8px;
+            }
+    
+            & .date {
+                margin-top: 5px;
+ 
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .activity-info {
+        padding-left: 15px;
+
+        & div p {
+            text-align: left;
+            font-size: .9em;
+        }
+
+        & .date {
+            text-align: left;
+        }
+    }
+
+
+
+    .arrow {
+        margin-left: 5px;
+    }
+}

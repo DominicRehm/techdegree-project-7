@@ -1,0 +1,56 @@
+// ========== Traffic Chart ========== \\
+
+.traffic-chart {
+    margin-top: 20px;
+    width: auto;
+}
+
+.traffic-nav ul {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    
+    & .traffic-nav-li {
+        padding: 5px 10px;
+    }
+}
+
+@media (min-width: 768px) {
+    .traffic-chart {
+        margin-top: 10px;
+        padding: 20px 10px;
+        border-bottom: 1px solid $border-color;
+        
+        & .traffic-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: .95em;
+
+            & h3 {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+// Daily Traffic 
+
+@media (min-width: 768px) {
+    .daily-chart {
+        padding: 0px 10px 20px 10px;
+        width: auto;
+        border-right: 1px solid $border-color;
+        border-bottom: 1px solid $border-color;
+    }
+}
+
+// Mobile 
+
+@media (min-width: 768px) {
+    .mobile-chart{
+        padding: 0px 10px 20px 10px;
+        width: auto;
+        border-bottom: 1px solid $border-color;
+    }
+}
